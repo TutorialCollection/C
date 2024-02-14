@@ -1,14 +1,15 @@
 /*
 ** Bicicletta.cpp
+** Classe bicicletta - Sandro Gallo - 14/02/2024
 */
 
 #include <iostream>
 using namespace std;
 
 class Bicicletta {
-  public:
     int raggio;
     string colore;
+
     Bicicletta( int r, string c ) {
         raggio=r;
         colore=c;
@@ -20,6 +21,7 @@ class Bicicletta {
 
 int main()
 {
+
     Bicicletta x(16,"verdino");
     Bicicletta y(14,"rossastro");
 
