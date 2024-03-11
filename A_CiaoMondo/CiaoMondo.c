@@ -7,6 +7,6 @@
 
 int main()
 {
-  printf("\n-- %s --\n", "Ciao mondo");
+  printf("\n-- %s --\n\n", "Ciao mondo");
   return 0;
 }
