@@ -1,6 +1,6 @@
 /*
 ** Matrice.cpp una classe definita da noi che spupazza le matrici come nessuno mai
-** Sandro Gallo - 13/04/2024
+** Sandro Gallo - 15/04/2024
 */
 
 #include <iostream>
