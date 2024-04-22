@@ -28,36 +28,30 @@ class BattleShip {
     }
 
     void play() {
-
-        // lancia 20 bombe a caso
-        for (int i=0; i<20; i++) {
-            int x = rand() % DIM;
-            int y = rand() % DIM;
-            if (campo.get(x,y)==HIT) continue;
-            if (campo.get(x,y)==SHIP) {
-                mappa.put(x,y,HIT);
-                campo.put(x,y,HIT);
-            } else mappa.put(x,y,MISS);
+        while ( ! gameOver() ) {
+            mappa.stampa();
+            if (!playHand()) break;
         }
-
-        mappa.stampa();
-
-        ask();
-
-        mappa.stampa();
         campo.stampa();
-
     }
 
-    void ask() {
-        cout << "Inserisci le coordinate di riga e colonna in cui sganciare la bomba: ";
+    bool playHand() {
+        cout << "Inserisci le coordinate di riga e colonna (1 - " << DIM << ") in cui sganciare la bomba (0 per terminare): ";
         int x, y;
-        cin >> x;
-        cin >> y;
+        cin >> x; if (x<=0 || x>DIM) return false; else x--;
+        cin >> y; if (y<=0 || y>DIM) return false; else y--;
         if (campo.get(x,y)==SHIP) {
             mappa.put(x,y,HIT);
             campo.put(x,y,HIT);
         } else mappa.put(x,y,MISS);
+        return true;
+    }
+
+    bool gameOver() {
+        for (int i=0; i<DIM; i++) 
+          for (int j=0; j<DIM; j++)
+            if (campo.get(i,j)==SHIP) return false;
+        return true;
     }
 
 };

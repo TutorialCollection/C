@@ -7,7 +7,7 @@
 using namespace std;
 
 // DIM, SHIP, MISS, HIT, VOID
-const int DIM = 10;
+const int DIM = 6;
 const char SHIP = 'X';
 const char MISS = '.';
 const char HIT = '*';
